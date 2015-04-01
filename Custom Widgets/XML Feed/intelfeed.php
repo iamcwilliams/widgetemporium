@@ -1,3 +1,10 @@
+/*
+*   
+*   This snippet looks for and strips elements from an external site's RSS feed in order to create a local feed. 
+*   Code below is intended for Berkshire Property Agents intelligence feed build.
+*
+*/
+
 <?php
 $html = "";
 $url = "http://www.ruralintelligence.com/index.php/feed/RSS_2.0";
