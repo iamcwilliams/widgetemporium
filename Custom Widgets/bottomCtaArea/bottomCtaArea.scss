@@ -1,0 +1,72 @@
+/* --------------------------------------------------------------------------
+	bottomCtaArea
+-------------------------------------------------------------------------- */
+
+$bottomCtaAreaWidth:;
+
+$bottomCtaHeight:;
+$bottomCtaWidth:;
+	$bottomCtaPadding: ($bottomCtaAreaWidth - ($bottomCtaWidth * 3)) / 2;
+$bottomCtaColor: white; //usually white
+
+$ctaContentPadding: 10px;
+$ctaContentFontSize-h3:;
+$ctaContentFontSize-p:;
+$ctaContentFontSize-span:;
+$ctaContentFontSize-a: $ctaContentFontSize-span;
+$ctaContentMarginBottom-h3:;
+$ctaContentMarginBottom-p:;
+
+#bottomCtaArea {
+	width: 100%;
+	.centerThis {
+		width: $bottomCtaAreaWidth;
+		margin: 0 auto;
+		padding: $bottomCtaPadding 0;
+		.bottomCta {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: $bottomCtaWidth;
+			height: $bottomCtaHeight;
+			margin: 0 $bottomCtaPadding 0 0;
+			.ctaContent {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				box-sizing: border-box; //this saves us from making computed variables
+				width: $bottomCtaWidth;
+				padding: $ctaContentPadding;
+				&, h3, p, span, a {
+					color: $bottomCtaColor;
+				}
+				h3 {
+					font-size: $ctaContentFontSize-h3;
+					line-height: $ctaContentFontSize-h3;
+					margin-bottom: $ctaContentMarginBottom-h3;
+					text-transform: $ctaContentTextTransform-h3;
+					font-weight: 300;
+				}
+				p {
+					font-size: $ctaContentFontSize-p;
+					line-height: $ctaContentFontSize-p;
+					margin-bottom: $ctaContentMarginBottom-p;
+					font-weight: 400;
+				}
+				span {
+					font-size: $ctaContentFontSize-span;
+					line-height: $ctaContentFontSize-span;
+					font-weight: 400;
+				}
+				a {
+					font-size: $ctaContentFontSize-a;
+					line-height: $ctaContentFontSize-a;
+					font-weight: 300;
+				}
+			}
+		}
+		.rightCta {
+			margin-right: 0;
+		}
+	}
+}

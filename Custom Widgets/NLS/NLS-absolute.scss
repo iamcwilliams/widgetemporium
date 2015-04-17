@@ -1,0 +1,176 @@
+/* --------------------------------------------------------------------------
+	NLS Natural Language Search
+-------------------------------------------------------------------------- */
+/* This position:absolute element is horizontally centered in its non-statically positioned parent */
+
+$nls_bottom: 40px;
+$nls_bottom_homepage: 40px;
+$nls_width: 732px;
+$nls_height: 103px;
+
+$nls_background-solid: $black;
+$nls_background-transparent: rgba(0,0,0,0.75);
+
+$nls_input-width: 645px;
+$nls_input-height: 41px;
+$nls_input-left: 21px;
+$nls_input-top: 44px;
+$nls_input-border-radius: 0;
+
+$nls_header-color: white;
+$nls_header-font: $font-primary;
+$nls_header-font-size: 24px;
+$nls_header-line-height: $nls_header-font-size / 6 * 5;
+$nls_header-font-weight: 600;
+$nls_header-left: 20px;
+$nls_header-top: 13px;
+
+$nls_button-width: 39px;
+$nls_button-height: $nls_input-height;
+$nls_button-top: $nls_input-top;
+$nls_button-left: 671px;
+$nls_button-background: $blue;
+$nls_button-color: white;
+$nls_button-font-size: 20px;
+$nls_button-background-hover: $off-white;
+$nls_button-color-hover: $nls_button-background;
+$nls_button-fa: true;
+$nls_button-stroke: false;
+	$nls_button-stroke-width: 5px;
+
+$nls_link-top: 26px;
+$nls_link-left: 584px;
+$nls_link-width: auto;
+$nls_link-height: auto;
+$nls_link-color: white;
+$nls_link-font: $font-primary;
+$nls_link-font-size: 12px;
+$nls_link-font-weight: 600;
+$nls_link-line-height: 12px;
+$nls_link-color-hover: $blue;
+
+.homepage #custom-header .widget-nls {
+	bottom: $nls_bottom_homepage;
+}
+#custom-header .widget-nls {
+	position: absolute;
+	bottom: $nls_bottom;
+	left: 50%;
+	margin-left: $nls_width / -2;
+	margin-bottom: 0;
+	z-index: 100;
+	* {
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+	}
+	form.box {
+		width: $nls_width;
+		height: $nls_height;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		background-color: $nls_background-solid;
+		background-color: $nls_background-transparent;
+		input#n {
+			width: $nls_input-width;
+			height: $nls_input-height;
+			position: absolute;
+			left: $nls_input-left;
+			top: $nls_input-top;
+			@include padding-x(16px);
+			display: block;
+			outline: none;
+			@include border-radius($nls_input-border-radius 0 0 $nls_input-border-radius);
+		}
+
+		label {
+			width: $nls_width;
+			height: $nls_height;
+			span {
+				width: auto;
+				height: $nls_header-font-size;
+				color: $nls_header-color;
+				font-family: $nls_header-font;
+				font-size: $nls_header-font-size;
+				line-height: $nls_header-line-height;
+				font-weight: $nls_header-font-weight;
+				position: absolute;
+				left: $nls_header-left;
+				top: $nls_header-top;
+			}
+			var {
+				right: auto;
+				bottom: auto;
+				left: $nls_input-left + $nls_input-width - 100px;
+				top: $nls_input-top + $nls_input-height / 2;
+			}
+		}
+		button.button.inline {
+			width: $nls_button-width;
+			height: $nls_button-height;
+			position: absolute;
+			top: $nls_button-top;
+			left: $nls_button-left;
+			background-image: none;
+			background-color: $nls_button-background;
+			@if $nls_button-stroke {background-color: $nls_button-color}
+			@include border-radius(0 $nls_input-border-radius $nls_input-border-radius 0);
+			span {
+				color: $nls_button-color;
+				background-color: $nls_button-background;
+				font-size: $nls_button-font-size;
+				@if $nls_button-fa {font-family: FontAwesome;}
+				@if $nls_button-stroke {padding: $nls_button-stroke-width;}
+				@include transition(all);
+			}
+			&:hover {
+				background-color: $nls_button-background-hover;
+				span {
+					color:$nls_button-color-hover;
+					background-color: $nls_button-background-hover;
+					@include transition(all);
+				}
+			}
+		}
+		#nls-link {
+			text-shadow: none;
+			position: absolute;
+			top: $nls_link-top;
+			left: $nls_link-left;
+			width: $nls_link-width;
+			height: $nls_link-height;
+			color: $nls_link-color;
+			font-family: $nls_link-font;
+			font-size: $nls_link-font-size;
+			font-weight: $nls_link-font-weight;
+			text-transform: uppercase;
+			line-height: $nls_link-line-height;
+			overflow: visible;
+			&:after {
+				content: '\f0da'; /* Make a conditional handle \f101 vs '\f0da' */
+				font-family: FontAwesome;
+				position: relative;
+				top: 0;
+				left: 5px;
+				@include transition(left);
+			}
+			&:hover {
+				color: $nls_link-color-hover;
+				&:after {
+					left: 8px;
+					@include transition(left);
+				}
+			}
+		}
+		ul {
+			position: absolute;
+			left: $nls_input-left + 16px;
+			top: $nls_input-top + $nls_input-height;
+			color: $nls_header-color;
+			li {
+				margin-right: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+/* --------------------------------------------------------------------------
+	Testimonial Widget + Page
+-------------------------------------------------------------------------- */
+$testimonial_header_margin-bottom: 30px;
+$testimonial_header_color: white;
+$testimonial_header_font-size: 24px;
+$testimonial_header_font-weight: 500;
+$testimonial_header_font-family: $font-primary;
+
+$testimonial_margin-bottom: 22px;
+$testimonial_color: $black;
+$testimonial_font-size: 14px;
+$testimonial_font-weight: 400;
+$testimonial_font-style: normal;
+$testimonial_font-family: $font-primary;
+$testimonial_line-height: 22px;
+$testimonial_has-quotes: true;
+
+$testimonial_signature_text-transform: capitalize;
+$testimonial_signature_color: $testimonial_color;
+$testimonial_signature_font-size: 16px;
+$testimonial_signature_font-weight: 600;
+$testimonial_signature_font-family: $font-primary;
+$testimonial_signature_has-hyphen: true;
+
+#bodywrapper .widget.testimonial {
+	h3 {
+		margin-bottom: $testimonial_header_margin-bottom;
+		a {
+			color: $testimonial_header_color;
+			font-size: $testimonial_header_font-size;
+			font-weight: $testimonial_header_font-weight;
+			font-family: $testimonial_header_font-family;
+		}
+	}
+	.testimonial p {
+		margin-bottom: $testimonial_margin-bottom;
+		color: $testimonial_color;
+		font-size: $testimonial_font-size;
+		font-weight: $testimonial_font-weight;
+		font-style: $testimonial_font-style;
+		font-family: $testimonial_font-family;
+		line-height: $testimonial_line-height;
+		&:before, &:after {
+			@if $testimonial_has-quotes {
+				content: '"';
+				font-family: Verdana, Arial, sans-serif;
+			}
+		}
+	}
+	.signature p {
+		text-transform: $testimonial_signature_text-transform;
+		color: $testimonial_signature_color;
+		font-size: $testimonial_signature_font-size;
+		font-weight: $testimonial_signature_font-weight;
+		font-family: $testimonial_signature_font-family;
+		&:before {
+			@if $testimonial_signature_has-hyphen {content: '- ';}
+		}
+	}
+}
+#testimonial-list .testimonial-content {
+	&, & > p {
+		margin-bottom: $testimonial_margin-bottom * 2;
+		color: $testimonial_color;
+		font-size: $testimonial_font-size;
+		font-weight: $testimonial_font-weight;
+		font-style: $testimonial_font-style;
+		font-family: $testimonial_font-family;
+		line-height: $testimonial_line-height;
+	}
+	.testimonial-sig, .testimonial-sig p {
+		margin-top: $testimonial_margin-bottom;
+		text-transform: $testimonial_signature_text-transform;
+		color: $testimonial_signature_color;
+		font-size: $testimonial_signature_font-size;
+		font-weight: $testimonial_signature_font-weight;
+		font-family: $testimonial_signature_font-family;
+		&:before {
+			@if $testimonial_signature_has-hyphen {content: '- ';}
+		}
+	}
+}
